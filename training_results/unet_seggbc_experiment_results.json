@@ -1,0 +1,237 @@
+{
+  "train_slices": 39990,
+  "validation_slices": 8525,
+  "test_slices": 8680,
+  "calibration_protocol": {
+    "probabilities": "before thresholding, after configured GBC blending",
+    "bce": "unweighted binary cross-entropy, clipped probabilities",
+    "brier": "mean squared probability error",
+    "ece_bins": 15,
+    "ece_binning": "equal-width bins over [0, 1]",
+    "macro_metrics": "unweighted mean across the three mask channels"
+  },
+  "baseline_alpha": [
+    0.25,
+    0.25,
+    0.25
+  ],
+  "baseline_threshold": [
+    0.699999988079071,
+    0.6499999761581421,
+    0.6499999761581421
+  ],
+  "baseline_unet_threshold": [
+    0.75,
+    0.75,
+    0.75
+  ],
+  "uncertainty_alpha": [
+    0.25,
+    0.25,
+    0.25
+  ],
+  "uncertainty_threshold": [
+    0.699999988079071,
+    0.6499999761581421,
+    0.699999988079071
+  ],
+  "uncertainty_unet_threshold": [
+    0.75,
+    0.75,
+    0.75
+  ],
+  "test_metrics": {
+    "unet": {
+      "dice_per_channel": [
+        0.43483693614894414,
+        0.7292256370538366,
+        0.674728404804682
+      ],
+      "iou_per_channel": [
+        0.2778221299696631,
+        0.5738435227503329,
+        0.5091246256622898
+      ],
+      "mean_channel_dice": 0.6129303260024875,
+      "combined_dice": 0.8605341965281526,
+      "combined_iou": 0.7552084440851002,
+      "calibration": {
+        "ece_bins": 15,
+        "bce_per_channel": [
+          0.012733352495827261,
+          0.014554793961216653,
+          0.011242227559481245
+        ],
+        "brier_per_channel": [
+          0.0030162082482034524,
+          0.00355730624466158,
+          0.002097381290668458
+        ],
+        "ece_per_channel": [
+          0.00350057567760992,
+          0.003410440658809026,
+          0.002186101323743002
+        ],
+        "macro_bce": 0.012843458005508387,
+        "macro_brier": 0.0028902985945111637,
+        "macro_ece": 0.0030323725533873158
+      },
+      "predicted_positive_fraction_per_channel": [
+        0.003532350070404506,
+        0.007396781394009217,
+        0.003694292434715822
+      ],
+      "reference_positive_fraction_per_channel": [
+        0.0015898977534562213,
+        0.006424599174347158,
+        0.002857236863159242
+      ],
+      "predicted_combined_positive_fraction": 0.011085935499871993,
+      "reference_combined_positive_fraction": 0.010871733790962622
+    },
+    "unet_gbc": {
+      "dice_per_channel": [
+        0.48092344130496756,
+        0.7328812690108865,
+        0.6861157964680927
+      ],
+      "iou_per_channel": [
+        0.3165893374841531,
+        0.5783840543804438,
+        0.5222041597149247
+      ],
+      "mean_channel_dice": 0.6333068355946488,
+      "combined_dice": 0.8615990052971667,
+      "combined_iou": 0.7568501866269691,
+      "calibration": {
+        "ece_bins": 15,
+        "bce_per_channel": [
+          0.00818345767448656,
+          0.012796070081873926,
+          0.008021569509040968
+        ],
+        "brier_per_channel": [
+          0.002010123320077257,
+          0.0028780648203668314,
+          0.00161271945245108
+        ],
+        "ece_per_channel": [
+          0.003218071406246442,
+          0.0034941450271042266,
+          0.001418392536892054
+        ],
+        "macro_bce": 0.009667032421800484,
+        "macro_brier": 0.002166969197631723,
+        "macro_ece": 0.0027102029900809075
+      },
+      "predicted_positive_fraction_per_channel": [
+        0.002458523345494112,
+        0.006617447516641065,
+        0.0034038038434459805
+      ],
+      "reference_positive_fraction_per_channel": [
+        0.0015898977534562213,
+        0.006424599174347158,
+        0.002857236863159242
+      ],
+      "predicted_combined_positive_fraction": 0.010405529953917051,
+      "reference_combined_positive_fraction": 0.010871733790962622
+    },
+    "unet_uncertainty": {
+      "dice_per_channel": [
+        0.507213679460332,
+        0.7346108314331801,
+        0.7304142322589116
+      ],
+      "iou_per_channel": [
+        0.3397764787106072,
+        0.5805414252638186,
+        0.5753169662247409
+      ],
+      "mean_channel_dice": 0.6574129143841413,
+      "combined_dice": 0.8684802776788296,
+      "combined_iou": 0.767534370410488,
+      "calibration": {
+        "ece_bins": 15,
+        "bce_per_channel": [
+          0.009394625470754283,
+          0.014907703992754748,
+          0.009545292267075468
+        ],
+        "brier_per_channel": [
+          0.0022545672439259028,
+          0.0036758888868728625,
+          0.0017054219098170608
+        ],
+        "ece_per_channel": [
+          0.0025684451963990705,
+          0.0036893077870279716,
+          0.0017000905478670272
+        ],
+        "macro_bce": 0.011282540576861498,
+        "macro_brier": 0.002545292680205275,
+        "macro_ece": 0.0026526145104313562
+      },
+      "predicted_positive_fraction_per_channel": [
+        0.002854304675499232,
+        0.008049721182155658,
+        0.0036933723758320533
+      ],
+      "reference_positive_fraction_per_channel": [
+        0.0015898977534562213,
+        0.006424599174347158,
+        0.002857236863159242
+      ],
+      "predicted_combined_positive_fraction": 0.011818376376088069,
+      "reference_combined_positive_fraction": 0.010871733790962622
+    },
+    "unet_uncertainty_gbc": {
+      "dice_per_channel": [
+        0.5458743309923212,
+        0.7439051886287881,
+        0.7419862991461316
+      ],
+      "iou_per_channel": [
+        0.3753969430749651,
+        0.5922364951230921,
+        0.5898078046705798
+      ],
+      "mean_channel_dice": 0.6772552729224136,
+      "combined_dice": 0.8714794813287594,
+      "combined_iou": 0.7722318441802634,
+      "calibration": {
+        "ece_bins": 15,
+        "bce_per_channel": [
+          0.006533485615150283,
+          0.012083845881349399,
+          0.006144839869149578
+        ],
+        "brier_per_channel": [
+          0.0015493649624895166,
+          0.0028585052213643946,
+          0.0013209367337967863
+        ],
+        "ece_per_channel": [
+          0.0023270893770640775,
+          0.003671287026768045,
+          0.0012026187808089539
+        ],
+        "macro_bce": 0.008254057121883087,
+        "macro_brier": 0.0019096023058835657,
+        "macro_ece": 0.002400331728213692
+      },
+      "predicted_positive_fraction_per_channel": [
+        0.001972322228622632,
+        0.007281131992447516,
+        0.003303357414874552
+      ],
+      "reference_positive_fraction_per_channel": [
+        0.0015898977534562213,
+        0.006424599174347158,
+        0.002857236863159242
+      ],
+      "predicted_combined_positive_fraction": 0.011162438396057347,
+      "reference_combined_positive_fraction": 0.010871733790962622
+    }
+  }
+}

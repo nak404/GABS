@@ -1,0 +1,136 @@
+{
+  "images_evaluated": 10,
+  "image_files": [
+    "volume_104_slice_0.h5",
+    "volume_104_slice_1.h5",
+    "volume_104_slice_10.h5",
+    "volume_104_slice_100.h5",
+    "volume_104_slice_101.h5",
+    "volume_104_slice_102.h5",
+    "volume_104_slice_103.h5",
+    "volume_104_slice_104.h5",
+    "volume_104_slice_105.h5",
+    "volume_104_slice_106.h5"
+  ],
+  "metric_protocol": {
+    "dice_iou": "global overlap counts across all evaluated images",
+    "overlap_predictions": "per-channel validation-selected thresholds",
+    "combined": "union of the three mask channels",
+    "calibration_probabilities": "sigmoid probabilities; GBC methods use the configured blend",
+    "bce": "unweighted binary cross-entropy with probabilities clipped to [1e-7, 1-1e-7]",
+    "brier": "mean squared probability error",
+    "ece_bins": 15,
+    "ece_binning": "equal-width bins over [0, 1]",
+    "macro_metrics": "unweighted mean across the three mask channels"
+  },
+  "metrics": {
+    "unet": {
+      "label": "U-Net",
+      "dice_per_channel": [
+        0.0,
+        0.9179780984842991,
+        0.0
+      ],
+      "iou_per_channel": [
+        0.0,
+        0.8483914209115282,
+        0.0
+      ],
+      "mean_channel_dice": 0.3059926994947664,
+      "mean_channel_iou": 0.28279714030384273,
+      "combined_dice": 0.9163167800781815,
+      "combined_iou": 0.8455577822311289,
+      "bce_per_channel": [
+        0.0166829359215999,
+        0.008280151643228354,
+        0.00016406748590450066
+      ],
+      "macro_bce": 0.008375718350244253,
+      "brier_per_channel": [
+        0.004732394543692169,
+        0.0023343171624231416,
+        5.222688239835838e-05
+      ],
+      "macro_brier": 0.0023729795295045564,
+      "ece_bins": 15,
+      "ece_per_channel": [
+        0.006063574532541022,
+        0.0039431053931676474,
+        8.820296432003582e-05
+      ],
+      "macro_ece": 0.003364960963342902
+    },
+    "unet_seggbc": {
+      "label": "U-Net + SegGBC",
+      "dice_per_channel": [
+        0.0,
+        0.9352646905099679,
+        0.0
+      ],
+      "iou_per_channel": [
+        0.0,
+        0.8784011220196354,
+        0.0
+      ],
+      "mean_channel_dice": 0.31175489683665597,
+      "mean_channel_iou": 0.2928003740065451,
+      "combined_dice": 0.9340093952725375,
+      "combined_iou": 0.8761891438164522,
+      "bce_per_channel": [
+        0.00870385561538449,
+        0.011218708011038532,
+        0.00011404322284974542
+      ],
+      "macro_bce": 0.0066788689497575895,
+      "brier_per_channel": [
+        0.002692024137808201,
+        0.002086406101738661,
+        2.9403710779107436e-05
+      ],
+      "macro_brier": 0.001602611316775323,
+      "ece_bins": 15,
+      "ece_per_channel": [
+        0.006063528095406865,
+        0.008373998742331584,
+        8.815615559220802e-05
+      ],
+      "macro_ece": 0.004841894331110219
+    },
+    "unet_seggbc_auv": {
+      "label": "U-Net + SegGBC + AUV",
+      "dice_per_channel": [
+        0.0,
+        0.9474430698920495,
+        0.0
+      ],
+      "iou_per_channel": [
+        0.0,
+        0.9001347507111843,
+        0.0
+      ],
+      "mean_channel_dice": 0.3158143566306832,
+      "mean_channel_iou": 0.3000449169037281,
+      "combined_dice": 0.9472937839754195,
+      "combined_iou": 0.8998652896273013,
+      "bce_per_channel": [
+        0.0018600973952590434,
+        0.008321684620073284,
+        6.0229251349774994e-05
+      ],
+      "macro_bce": 0.003414003755560701,
+      "brier_per_channel": [
+        0.000523474190842472,
+        0.0014581081804097265,
+        1.6358110939370512e-05
+      ],
+      "macro_brier": 0.0006659801607305231,
+      "ece_bins": 15,
+      "ece_per_channel": [
+        0.0014078880131000652,
+        0.005753083710831514,
+        4.594723025474055e-05
+      ],
+      "macro_ece": 0.002402306318062107
+    }
+  }
+}
